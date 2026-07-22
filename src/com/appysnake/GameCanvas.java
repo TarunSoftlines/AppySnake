@@ -295,7 +295,7 @@ public class GameCanvas extends Canvas implements Runnable {
                 g.drawImage(foodImg, drawFoodX, drawFoodY, Graphics.LEFT | Graphics.TOP);
             } else {
                 g.setColor(0xFF0000);
-                g.fillOval(drawFoodX, drawFoodY, tileSize, tileSize);
+                g.fillArc(drawFoodX, drawFoodY, tileSize, tileSize, 0, 360);
             }
         }
 
