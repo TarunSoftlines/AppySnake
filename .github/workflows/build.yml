@@ -34,8 +34,10 @@ jobs:
         run: |
           mkdir -p build_out
           cp -r bin/* build_out/
-          cp -r res/* build_out/
-          cp -r META-INF build_out/
+          
+          # Copy resources and META-INF from their location in src/com/appysnake
+          if [ -d "src/com/appysnake/res" ]; then cp -r src/com/appysnake/res/* build_out/; fi
+          if [ -d "src/com/appysnake/META-INF" ]; then cp -r src/com/appysnake/META-INF build_out/; fi
           
           cd build_out
           jar cvfm ../AppySnake.jar META-INF/MANIFEST.MF .
